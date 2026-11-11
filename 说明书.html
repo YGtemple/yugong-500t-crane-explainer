@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>500t 门机交互科普页 · 使用说明书</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23c8352b'/%3E%3Cpath d='M6 7h12M12 7v6' stroke='%23fff' stroke-width='2' fill='none'/%3E%3Ccircle cx='12' cy='16' r='3' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#eef2f7; --panel:#ffffff; --line:#d8e0ea; --line2:#c2cedd;
+  --red:#c8352b; --ink:#16202e; --dim:#46566b; --faint:#7b8a9e;
+  --mono:"Cascadia Mono","JetBrains Mono",Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px 80px}
+header{padding:52px 0 24px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--red);font-weight:700}
+h1{margin:10px 0 8px;font-size:34px;line-height:1.25;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:14.5px;max-width:640px}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:11.5px;color:var(--dim);border:1px solid var(--line2);background:#fff;
+  border-radius:999px;padding:3px 10px}
+nav{margin:26px 0 4px;display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:var(--dim)}
+nav a{color:var(--dim);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:1px}
+nav a:hover{color:var(--red);border-color:var(--red)}
+h2{margin:44px 0 10px;font-size:20px;letter-spacing:.01em;padding-left:11px;border-left:3px solid var(--red);line-height:1.4}
+h3{margin:24px 0 6px;font-size:15.5px}
+p{margin:8px 0;color:var(--dim)}
+p strong{color:var(--ink)}
+ul,ol{margin:8px 0 8px 20px;color:var(--dim)}
+li{margin:4px 0}
+li b{color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.card.warn{border-left:3px solid #d99a1f}
+.card.bad{border-left:3px solid var(--red)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:700px){.grid{grid-template-columns:1fr}}
+.mini{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.mini h4{margin:0 0 4px;font-size:13.5px;color:var(--ink)}
+.mini p{margin:0;font-size:12.5px;color:var(--faint);line-height:1.6}
+code{font-family:var(--mono);font-size:12.5px;background:#f3f6fa;border:1px solid var(--line);
+  border-radius:5px;padding:1px 5px;color:#22303f;word-break:break-all}
+pre{font-family:var(--mono);font-size:12.5px;background:#f7f9fc;border:1px solid var(--line);
+  border-radius:10px;padding:12px 14px;overflow:auto;margin:10px 0;line-height:1.65}
+pre code{background:none;border:0;padding:0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;table-layout:fixed}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;color:var(--dim)}
+th{color:var(--ink);font-weight:700;background:#f6f8fc}
+th:nth-child(1),td:nth-child(1){width:26%}
+.k{display:inline-block;min-width:64px;font-family:var(--mono);font-size:12px;color:var(--ink)}
+footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--faint)}
+@media print{nav{display:none}body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">YUGONG · 大方控股集团 / 500t 门机</div>
+  <h1>500t 门机交互科普页 · 使用说明书</h1>
+  <p class="sub">一个可离线打开的单文件交互页：深度探索、部件科普、参数化建模台、毛毡工坊、大开眼界导演台、手机第一人称取景与沉浸式穿越页。本说明写给拿到这个文件夹、要在另一台电脑上演示的人。</p>
+  <div class="meta">
+    <span class="chip">单文件 HTML · 约 2.3 MB</span>
+    <span class="chip">整包约 235 MB · U 盘可拷</span>
+    <span class="chip">Chrome / Edge 直接打开</span>
+    <span class="chip">不需要装任何软件</span>
+    <span class="chip">2026-11 版</span>
+  </div>
+  <nav>
+    <a href="#start">① 快速开始</a>
+    <a href="#files">② 文件清单</a>
+    <a href="#modules">③ 模块怎么用</a>
+    <a href="#director">④ 导演台与白模运镜</a>
+    <a href="#phone">⑤ 手机第一人称</a>
+    <a href="#ai">⑥ 联网与密钥</a>
+    <a href="#limits">⑦ 目前还不行</a>
+    <a href="#faq">⑧ 常见问题</a>
+  </nav>
+</header>
+
+<h2 id="start">① 快速开始（三条）</h2>
+<ol>
+  <li><b>解压整个文件夹</b>到任意位置（桌面、U 盘都行），<b>不要只拷一个 html</b>——图片、视频、沉浸式页都在同级的 <code>assets\</code> 与 <code>scroll-tour\</code> 里。</li>
+  <li>双击 <code>500t门机交互科普页.html</code>，用 Chrome 或 Edge 打开。首次进入建议允许显卡加速，3D 区才能显示。</li>
+  <li>要演示「手机第一人称取景」，在文件夹里起一个本地服务（见第 ⑤ 节），手机连同一个 Wi‑Fi 扫码进入。</li>
+</ol>
+<div class="card warn">
+  <b>别用微信/QQ 内置浏览器打开。</b>内置浏览器对 WebGL 与本地文件限制较多，建模台、导演台、手机取景可能只显示降级提示。请用系统 Chrome / Edge。
+</div>
+
+<h2 id="files">② 文件清单</h2>
+<table>
+  <tr><th>路径</th><th>作用</th></tr>
+  <tr><td><code>500t门机交互科普页.html</code></td><td>主交付物。全部内容、样式、脚本、白模 GLB 都内联在这一个文件里。</td></tr>
+  <tr><td><code>assets\</code></td><td>主页面用到的实拍图、场景图、示意视频（相对路径引用，改名或移动会裂图）。</td></tr>
+  <tr><td><code>scroll-tour\index.html</code></td><td>沉浸式滚动穿越页。主页面底部的「进入沉浸式穿越」会跳到这里。</td></tr>
+  <tr><td><code>scroll-tour\assets\</code></td><td>穿越页实际加载的分段运镜视频（桌面 leg / 手机 mobile）与静帧。包里只带页面真正引用的片段，约 210 MB；母版与未用到的 1080p 版留在项目目录，不随包分发。</td></tr>
+  <tr><td><code>说明书.html</code></td><td>本文件。</td></tr>
+  <tr><td><code>模型源文件\</code></td><td><code>build_director_crane.py</code>（Blender 参数化白模脚本）与 <code>director_crane.glb</code>（导出的低模），用于二次修改门机白模。</td></tr>
+</table>
+<p>主页面里已经内联了这份 131 KB 的 GLB，<b>演示时不需要再单独加载模型文件</b>；<code>模型源文件\</code>只是留给后续改尺寸、改结构时用。</p>
+
+<h2 id="modules">③ 模块怎么用</h2>
+<div class="grid">
+  <div class="mini"><h4>深度探索 · PART 01–07</h4><p>按「先看整机 → 再拆部件 → 最后看作业」的顺序。点部件热区会拉近相机并弹出该部件的说明卡。</p></div>
+  <div class="mini"><h4>科普 · 二级内容</h4><p>吊具、起升、行走、电气、安全五类知识卡，跟在深度探索后面，读完可回到整机视角。</p></div>
+  <div class="mini"><h4>客户自建建模台 · PART 08</h4><p>拖滑块改主梁形式、跨度、起升高度、颜色、吊钩/司机室/爬梯，右侧实时重建白模；「保存当前视角」记录机位。</p></div>
+  <div class="mini"><h4>毛毡工坊</h4><p>上传照片或选示例，点生成走照片模型改成 3D 毛毡手办风；生成历史保留最近 10 张（刷新后仍保留最近的联网生成图 8 张，存在浏览器本地）。</p></div>
+  <div class="mini"><h4>大开眼界导演台 · PART 09</h4><p>场景盒、角色 A–F、机位小窗、四段时间轴、录制与导出。详见第 ④ 节。</p></div>
+  <div class="mini"><h4>沉浸式穿越页</h4><p>滚动驱动六段运镜，左下角「‹ 返回主页面」可回。视频较大，机械硬盘首次加载会等几秒。</p></div>
+</div>
+
+<h2 id="director">④ 导演台、白模与运镜</h2>
+<h3>4.1 界面</h3>
+<ul>
+  <li><b>场景区</b>：门机白模 + 码头作业面（集装箱堆、集卡、灯杆、仓库、岸线），空间盒 60 × 40 × 32 m（示例值）。</li>
+  <li><b>镜头小窗</b>：当前机位实时画面，拖动主视图可以改机位，小窗跟着变。</li>
+  <li><b>角色</b>：A 主角 / B 司索工 / C 安全员 / D 卡车司机 / E 记录员 / F 巡检员，可在对话里改位置。</li>
+</ul>
+<h3>4.2 四个常用动作</h3>
+<ol>
+  <li><b>摆机位</b>：主视图里拖动旋转、滚轮推拉，或用 <span class="k">W A S D</span> 平移、<span class="k">Q E</span> 升降。</li>
+  <li><b>一键环绕</b>：点工具栏「环绕」，自动生成 10 秒 / 240 帧绕门机一圈（同时缓慢升高）的机位，点「播放」即预演。</li>
+  <li><b>录制 / 播放</b>：点「开始录制」生成一条 10 秒机位；「播放」从头跑一遍；「停止」中断。</li>
+  <li><b>导出参考套件</b>：把机位、角色走位、时间轴导出成给视频模型/Blender 用的参考文件。</li>
+</ol>
+<h3>4.3 白模怎么来的</h3>
+<p>Blender 5.x 无头模式跑 <code>模型源文件\build_director_crane.py</code>，按米制参数化建出 73 个对象（轨道、车轮、台车、支腿、上下横梁、双主梁、端梁、小车、机房、起升绳、吊具、司机室、爬梯），导出 <code>director_crane.glb</code>。脚本里改 <code>SPAN / HEIGHT / DEPTH / RAIL_L</code> 就能改尺寸，重新导出后用同样方式内联即可。</p>
+<div class="card">
+  <b>注意：</b>导出的 GLB 是 Blender 的 Z 轴向上坐标，进 three.js 时必须 <code>inner.rotation.x = Math.PI/2</code> 立起来，否则整台门机会「躺」在地上，看起来只剩一排横梁。
+</div>
+
+<h2 id="phone">⑤ 手机第一人称取景</h2>
+<ol>
+  <li>在本文件夹地址栏输入 <code>cmd</code> 回车，执行：<pre><code>python -m http.server 8000</code></pre></li>
+  <li>查电脑内网 IP：<code>ipconfig</code>，找「IPv4 地址」，例如 <code>192.168.1.23</code>。</li>
+  <li>电脑上打开 <code>http://127.0.0.1:8000/500t门机交互科普页.html</code>，点导演台工具栏「手机取景」，弹出二维码。</li>
+  <li>手机连<b>同一个 Wi‑Fi</b>，扫码或手输 <code>http://192.168.1.23:8000/500t门机交互科普页.html#phone</code>。</li>
+  <li>手机里单指拖动转头、上下拖动俯仰、双指捏合改视野。录一段后点「导出取景」，把 JSON 发回电脑，在导演台「导入取景」回放。</li>
+</ol>
+<div class="card warn">
+  <b>为什么不能直接双击？</b><code>file://</code> 下浏览器不允许页面读取本地文件、也不允许手机跨设备访问。必须用上面的本地服务（不需要联网，只需要同一局域网）。
+</div>
+
+<h2 id="ai">⑥ 联网能力与密钥</h2>
+<table>
+  <tr><th>能力</th><th>说明</th></tr>
+  <tr><td>对话建模（LLM）</td><td>DeepSeek V4.1（模型名 <code>deepseek-v4.1-flash</code>，OpenAI 兼容网关 <code>https://www.aicost.me/v1</code>）。说「作业面改成 80×50×35，机位压低」这类话，页面会解析成参数并重建白模。</td></tr>
+  <tr><td>毛毡（照片）</td><td>走 <code>/v1/images/edits</code> 的 <code>gpt-image-2</code>，把上传照片改成 3D 毛毡手办风。需要联网。</td></tr>
+</table>
+<p>密钥已内置在页面里，<b>带不带 <code>sky:</code> 前缀都能直接跑</b>（页面会自动去掉前缀）。如果换了 key：</p>
+<pre><code>1) 打开浏览器控制台（F12）
+2) localStorage.setItem('crane-llm-key', 'sky:sk-你的新key')
+3) 刷新页面</code></pre>
+<div class="card warn">
+  <b>这把 key 会跟着文件走。</b>对外发版、上传公开仓库或交给客户前，建议把页面里的 key 清空、改成服务端代理，避免额度被别人用掉。
+</div>
+
+<h2 id="limits">⑦ 目前还不行（如实说明）</h2>
+<div class="card bad">
+  <b>视频模型 / 毛毡视频：暂未接通。</b>
+  <ul>
+    <li>毛毡的「视频」标签目前是<b>前端滤镜模拟</b>（降采样色块 + 绒面 + 暖调），不是真的视频生成模型，画质和稳定性都有限。</li>
+    <li>视频生成模型（MiniMax H3 一类）需要单独的 API key 与计费账号，本包里没有配置，所以「用视频模型改视频」这条链路跑不通。</li>
+    <li>毛毡的「图片」标签是<b>真的照片模型改图</b>，可用，但依赖外网 <code>aicost.me</code>，断网会失败。</li>
+  </ul>
+</div>
+<ul>
+  <li>页面里的价格、吨位以外的参数均为<b>示例/推定值</b>，正式对外需按铭牌与图纸校准。</li>
+  <li>拍照识别部件是前端演示逻辑，不是真实视觉模型。</li>
+  <li>白模为「按白膜图参数化建模」，尺寸是推定值，不代表最终工程设计。</li>
+</ul>
+
+<h2 id="faq">⑧ 常见问题</h2>
+<h3>打开后 3D 区显示「当前运行环境未启用 3D（WebGL）」</h3>
+<p>浏览器禁用了硬件加速，或显卡驱动过旧。Chrome 设置 → 系统 → 打开「使用图形加速」，重启浏览器；远程桌面/虚拟机里常这样，换本机演示。</p>
+<h3>图片裂了 / 视频不播</h3>
+<p>说明 <code>assets\</code>、<code>scroll-tour\</code> 没跟着一起拷，或文件名被改过。保持目录结构和文件名不变。</p>
+<h3>手机扫码打不开</h3>
+<p>三个原因按顺序排：① 没起 <code>python -m http.server</code>；② 手机和电脑不在同一 Wi‑Fi（访客网络/公司网常隔离）；③ Windows 防火墙拦了 8000 端口，允许一次即可。</p>
+<h3>毛毡生成失败 / 一直转圈</h3>
+<p>先确认能上外网；再看 F12 控制台是不是 401（key 失效）或 429（额度/频率限制）。图片模式对网络要求比视频模式高。</p>
+<h3>换电脑后对话建模没反应</h3>
+<p>检查是否能访问 <code>https://www.aicost.me</code>；公司网络可能拦截。也可在控制台看 <code>fetch</code> 报错。</p>
+
+<h2>附：参数口径与致谢</h2>
+<ul>
+  <li>整机 500t（吊具下额定，实拍铭牌）；跨度、起升高度、门架深为示例值。</li>
+  <li>白模与运镜范式参考开源项目 DKYJ Director（GPL‑3.0）：其白模由 Blender 脚本程序化生成 + 机位关键帧 + timeline marker；本项目按其思路在 three.js 里重建，未直接使用其二进制资产（仓库内没有 .glb/.gltf）。</li>
+  <li>页面视频除特别标注外均为团队 AI 生成或实拍素材，仅用于科普演示。</li>
+</ul>
+
+<footer>
+  豫工 YUGONG · 大方控股集团 500t 门式起重机交互科普页 · 使用说明书 · 2026-11
+</footer>
+</div>
+</body>
+</html>
